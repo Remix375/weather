@@ -1,0 +1,50 @@
+.center {
+    text-align: center;
+}
+
+#title {
+    font-family: "Goblin One", cursive;
+    font-size: 4.33em;
+    color: #19ff8c;
+    margin-top: 0.80em;
+}
+
+body{
+    margin: 0;
+}
+
+header {
+    background-image: url("../images/sky.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    height: 25em;
+    overflow: hidden;
+}
+
+
+#search-bar {
+    margin-top: 3.4em;
+
+    font-size: 1.5em;
+
+    width: 55em;
+    height: 3em;
+}
+
+#meteos {
+    display: flex;
+}
+
+.day-meteo {
+    height: 32em;
+    margin: 0.33em;
+    flex: 1;
+    border: solid green;
+    float: left;
+
+
+}
+
+
