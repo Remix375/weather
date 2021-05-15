@@ -48,3 +48,14 @@ header {
 }
 
 
+.logo-container {
+    height: 12em;
+    
+}
+
+.logo-container img {
+    height: 80%;
+    margin: 2em;
+    
+}
+
