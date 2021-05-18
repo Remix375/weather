@@ -52,14 +52,16 @@ const search = () => {
         d = document.createElement('div')
         d.classList.add("day-meteo")
         d.innerHTML = `
-            <div class="logo-container center">
-                <img src="./resssource/images/logo.png">
-            </div>
-            <div class="information center">
-                <h1 classe="place">Paris</h1>
-                <div class="weather-information">
-                <h2 class="temp">32</h2>
-                <!--other info-->
+            <div class="weather-box">
+                <div class="logo-container">
+                    <img src="http://openweathermap.org/img/wn/${day_data["weather"]["icon"]}@2x.png"}>
+                </div>
+                <div class="information center">
+                    <h1 classe="place">Paris</h1>
+                    <div class="weather-information">
+                    <h2 class="temp">32</h2>
+                    <!--other info-->
+                </div>
             </div>
         `
         document.getElementById("meteos").appendChild(d)

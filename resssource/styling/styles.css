@@ -44,18 +44,29 @@ header {
     border: solid green;
     float: left;
 
+    align-items: center;
+    justify-content: center;
 
 }
 
+.weather-box {
+    text-align: center
+}
 
 .logo-container {
     height: 12em;
-    
+    margin: 1.5em auto;
+    width: 13em;
+    border-radius: 40%;
+    background-color:#19ff8c;
+    text-align: center;
 }
 
+
+
 .logo-container img {
-    height: 80%;
-    margin: 2em;
-    
+    height: 100%;
+    width: auto;
+    padding: auto 0;
 }
 
