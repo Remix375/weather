@@ -17,6 +17,8 @@ const search = () => {
         return;
     }
 
+    document.getElementById("meteos").innerHTML = "";
+
     /*
         autres variables pour conditions
     */
