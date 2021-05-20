@@ -19,19 +19,10 @@ const search = () => {
 
     document.getElementById("meteos").innerHTML = "";
 
-    /*
-        autres variables pour conditions
-    */
-
-
-    // function that calls to api
-    //const data = dataExample["list"]
-
 
     reqToServ(searchBar.value).then(rep => {
 
         let placeData = rep['city']
-        console.log(placeData)
 
         let data = [];
 
@@ -39,7 +30,6 @@ const search = () => {
         rep["list"].forEach(item => {
             console.log(item['dt_txt'])
             if (item["dt_txt"].substring(8, 10) !== dateForItem & (parseInt(item["dt_txt"].substring(11, 13)) >= 12)) {
-                console.log(item["dt_txt"].substring(8, 10))
                 data.push(item)
                 dateForItem = item["dt_txt"].substring(8, 10) 
             }
@@ -51,8 +41,7 @@ const search = () => {
             
             let day_data = data[i]
             
-    
-            console.log(day_data)
+
             if (!day_data) {
                 return
             }
@@ -75,7 +64,6 @@ const search = () => {
             `
     
             document.getElementById("meteos").appendChild(d)
-            //descendents.appendChild(element)
         }
     });
 
