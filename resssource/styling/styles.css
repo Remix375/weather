@@ -31,7 +31,31 @@ header {
 
     width: 55em;
     height: 3em;
+    border-radius: 20px;
 }
+
+#search-button {
+    height: 3em;
+    font-size: 1.5em;
+    margin: 1em;
+    width: 5em;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+}
+
+#search-button:hover {
+    background-color: #8affb7;
+}
+
+#search-button:active {
+    background-color:#54ff96;
+}
+
+
+
 
 #meteos {
     display: flex;
