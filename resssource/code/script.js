@@ -16,7 +16,7 @@ const dataExample = {
 
 
 const reqToServ = (place) => {
-    let dataFetched = fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=0608a5168843251f4918bd0d742c0e19`)
+    let dataFetched = fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=0608a5168843251f4918bd0d742c0e19&units=metric`)
     .then(response => response.json())
     .then(respJson => {
         console.log(respJson.cod)
@@ -24,7 +24,8 @@ const reqToServ = (place) => {
         respJson["list"].forEach(item => {
             retList.push({
                 temp: item["main"]["temp"],
-                icon: item["weather"][0]["icon"]
+                icon: item["weather"][0]["icon"],
+                day: item["dt_txt"]
             })
         })
         console.log(retList)
@@ -51,15 +52,31 @@ const search = () => {
 
 
     reqToServ("paris").then(rep => {
-        let data = rep
         let ancestor = document.getElementById('meteos')
         let descendents = ancestor.getElementsByClassName('day-meteo');
-    
-        console.log("data", data)
+        //let data = rep;
+        //console.log("data", data)
         //meteo.innerHTML = "";
+        let heu = "hey"
+        console.log(heu[1])
+
+        let data = [];
+
+        let dateForItem = 0;
+        rep.forEach(item => {
+            if (item["day"].substring(8, 10) !== dateForItem & (parseInt(item["day"].substring(11, 13)) >= 12)) {
+                console.log(item["day"].substring(8, 10))
+                data.push(item)
+                dateForItem = item["day"].substring(8, 10) 
+            }
+        })
     
     
         for (let i = 0; i < 5/*/descendents.length*/; i++) {
+            
+
+
+
             let element = descendents[i]
             let day_data = data[i]
     
@@ -78,7 +95,8 @@ const search = () => {
                     <div class="information center">
                         <h1 classe="place">Paris</h1>
                         <div class="weather-information">
-                        <h2 class="temp">${day_data["temp"]}</h2>
+                        <h2 class="temp">Temperature: ${day_data["temp"]}</h2>
+                        <h2>Day: ${day_data["day"]}</h2>
                         <!--other info-->
                     </div>
                 </div>
