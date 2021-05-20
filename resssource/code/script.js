@@ -13,7 +13,9 @@ const reqToServ = (place) => {
 
 const search = () => {
     const searchBar = document.getElementById("search-bar");
-    const meteo = document.getElementById("meteos");
+    if (searchBar.value === "") {
+        return;
+    }
 
     /*
         autres variables pour conditions
@@ -24,7 +26,7 @@ const search = () => {
     //const data = dataExample["list"]
 
 
-    reqToServ("paris").then(rep => {
+    reqToServ(searchBar.value).then(rep => {
 
         let placeData = rep['city']
         console.log(placeData)
@@ -73,19 +75,14 @@ const search = () => {
             document.getElementById("meteos").appendChild(d)
             //descendents.appendChild(element)
         }
-
-
-
-
-
-
-
-
-
-
     });
 
 }
 
+const searchButton = document.getElementById("search-button");
 
-search()
+
+
+
+searchButton.addEventListener("click", search);
+
