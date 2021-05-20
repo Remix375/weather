@@ -1,5 +1,5 @@
 const reqToServ = (place) => {
-    let dataFetched = fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=0608a5168843251f4918bd0d742c0e19&units=metric`)
+    let dataFetched = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=0608a5168843251f4918bd0d742c0e19&units=metric`)
     .then(response => response.json())
     .then(respJson => {
         return respJson
